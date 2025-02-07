@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <div style="display: flex; height: 100vh; justify-content: center; align-items: center; font-size: 20px; flex-direction: column;">
+        <h1>Simple Calculator</h1>
+        <button onclick="calculate()">Calculate</button>
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
+    <script>
+        function calculate() {
+            let num1 = parseFloat(prompt("Enter the first number:"));
+            let num2 = parseFloat(prompt("Enter the second number:"));
+            let operation = prompt("Enter the operation (add, subtract, multiply, divide, modulus, exponentiation):").toLowerCase();
+            let result;
+
+            switch(operation) {
+                case "add":
+                    result = num1 + num2;
+                    break;
+                case "subtract":
+                    result = num1 - num2;
+                    break;
+                case "multiply":
+                    result = num1 * num2;
+                    break;
+                case "divide":
+                    result = num1 / num2;
+                    break;
+                case "modulus":
+                    result = num1 % num2;
+                    break;
+                case "exponentiation":
+                    result = Math.pow(num1, num2);
+                    break;
+                default:
+                    result = "Invalid operation";
+            }
+
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
