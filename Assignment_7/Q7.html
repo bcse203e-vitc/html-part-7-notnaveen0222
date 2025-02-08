@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Largest Number</title>
+</head>
+<body>
+    <script>
+        function findSecondLargest(arr) {
+            let uniqueArr = [...new Set(arr)].sort((a, b) => b - a);
+            return uniqueArr.length > 1 ? uniqueArr[1] : "Not enough unique numbers";
+        }
+
+        let input = prompt("Enter numbers separated by commas:");
+        if (input) {
+            let arr = input.split(",").map(Number);
+            alert("Second Largest: " + findSecondLargest(arr));
+        }
+    </script>
+</body>
+</html>
+    

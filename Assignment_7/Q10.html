@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+</head>
+<body>
+    <script>
+        let rows = parseInt(prompt("Enter number of rows:"));
+        let cols = parseInt(prompt("Enter number of columns:"));
+
+        if (!isNaN(rows) && !isNaN(cols) && rows > 0 && cols > 0) {
+            let table = "<table border='1' style='border-collapse: collapse;'>";
+            for (let i = 0; i < rows; i++) {
+                table += "<tr>";
+                for (let j = 0; j < cols; j++) {
+                    table += `<td style='padding: 5px;'>Cell ${i + 1}-${j + 1}</td>`;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.body.innerHTML = table;
+        } else {
+            alert("Invalid input!");
+        }
+    </script>
+</body>
+</html>

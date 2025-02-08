@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(str) {
+            let cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+            let reversedStr = cleanedStr.split("").reverse().join("");
+            return cleanedStr === reversedStr;
+        }
+
+        let userInput = prompt("Enter a word or phrase to check if it's a palindrome:");
+        if (userInput) {
+            if (isPalindrome(userInput)) {
+                alert("It's a palindrome!");
+            } else {
+                alert("It's not a palindrome.");
+            }
+        } else {
+            alert("No input provided.");
+        }
+    </script>
+</body>
+</html>
